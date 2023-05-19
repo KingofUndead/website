@@ -1,0 +1,129 @@
+
+a {
+  font-weight: 500;
+  color: #000000;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#Projects {
+  text-align: left;
+  position: absolute;
+width: 35%;
+height: 85%;
+left: 55%;
+top: 5%;
+
+background: linear-gradient(154.02deg, #FF00D6 0%, #5200FF 96.26%);
+border: 2px dashed #000000;
+border-radius: 20px;
+overflow: hidden;
+}
+
+.projectname, .projectdesc {
+  margin-left: 10%;
+}
+
+.title {
+  text-align: center;
+  text-decoration-line: underline;
+  width: 100%;
+  height: 15%;
+}
+
+.name {
+  position: absolute;
+width: 865px;
+height: 106px;
+/* left: calc(50% - 865px/2 - 293px); */
+/* top: calc(50% - 106px/2 + 485.5px); */
+left: -335px;
+top: 15%;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 112px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+transform: rotate(-90deg);
+}
+
+.contact {
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  text-align: left;
+  position: absolute;
+width: 35%;
+height: 34%;
+
+background: linear-gradient(154.02deg, #FF00D6 0%, #5200FF 96.26%);
+border: 2px dashed #000000;
+border-radius: 20px;
+}
+
+form {
+  top: 10%;
+  left: 30%;
+  position: relative;
+  color: white;
+  margin-left: 0%;
+}
+
+.contactarea {
+  border-radius: 10px;
+  border-color: #000000;
+}
+.aboutme {
+  text-align: left;
+  position: absolute;
+width: 35%;
+height: 85%;
+left: 55%;
+top: 100%;
+background: linear-gradient(154.02deg, #FF00D6 0%, #5200FF 96.26%);
+border: 2px dashed #000000;
+border-radius: 20px;
+overflow: hidden;
+}
