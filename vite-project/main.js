@@ -11,9 +11,9 @@ document.querySelector('#app').innerHTML = `
    <div class="contact">
    <h1 class="title">Contact</h1>
    <form method="POST">
-    <input type="text" name="name" placeholder="Name">
-    <input type="email" name="email" placeholder="Email">
-    <input type="text" name="message" placeholder="Message">
+    <input type="text" name="name" placeholder="Name" class="contactarea">
+    <input type="email" name="email" placeholder="Email" class="contactarea">
+    <input type="text" name="message" placeholder="Message" class="contactarea message">
     <!-- add hidden Honeypot input to prevent spams -->
     <input type="hidden" name="_gotcha" style="display:none !important">
     <button type="submit">Send</button>
