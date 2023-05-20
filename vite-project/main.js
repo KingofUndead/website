@@ -29,8 +29,8 @@ projects.forEach(function(p) {
   document.getElementById("Projects").innerHTML += `<a href=${p.Link}><h2 class="projectname">${p.Name}</h2> <p class="projectdesc">${p.desc}</p> </a>`
 })
 
-const form = document.getElementById("form");
-form.addEventListener("submit", formSubmit);
+// const form = document.getElementById("form");
+// form.addEventListener("submit", formSubmit);
 
 function formSubmit(e) {
   e.preventDefault()
@@ -46,4 +46,4 @@ function formSubmit(e) {
   .catch(error => console.log(error));
 }
 
-document.querySelector("form").addEventListener("submit", handleSubmit)
+document.querySelector("form").addEventListener("submit", formSubmit)
