@@ -59,5 +59,5 @@ xhr.onreadystatechange = function () {
   }
 }
 
-xhr.open('GET', './aboutme.txt')
+xhr.open('GET', 'aboutme.txt')
 xhr.send()
