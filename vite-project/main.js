@@ -51,13 +51,7 @@ function formSubmit(e) {
 document.querySelector("form").addEventListener("submit", formSubmit)
 
 const textcontainer = document.getElementById("about")
-const xhr = new XMLHttpRequest()
 
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    textcontainer.textContent = xhr.responseText
-  }
-}
-
-xhr.open('GET', 'aboutme.txt')
-xhr.send()
+fetch('aboutme.txt').then(response => response.text()).then(data => {
+  textcontainer.textContent = data
+})
