@@ -50,7 +50,7 @@ function formSubmit(e) {
 
 document.querySelector("form").addEventListener("submit", formSubmit)
 
-fetch('file:///aboutme.txt').then(response => {
+fetch('./aboutme.txt').then(response => {
   if (!response.ok) {
     throw new Error(`HTTP error: ${response.status}`)
   }
