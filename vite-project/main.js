@@ -52,6 +52,6 @@ document.querySelector("form").addEventListener("submit", formSubmit)
 
 const textcontainer = document.getElementById("about")
 
-fetch('aboutme.txt').then(response => response.text()).then(data => {
+fetch('./aboutme.txt').then(response => response.text()).then(data => {
   textcontainer.textContent = data
 })
