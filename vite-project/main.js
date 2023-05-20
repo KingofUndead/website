@@ -10,7 +10,7 @@ document.querySelector('#app').innerHTML = `
 
    <div class="contact">
    <h1 class="title">Contact</h1>
-   <form action="https://getform.io/f/b24a1fe4-a606-4f8c-8c60-da4d66813543" method="POST" data-netlify="true">
+   <form method="POST">
     <input type="text" name="name" placeholder="Name">
     <input type="email" name="email" placeholder="Email">
     <input type="text" name="message" placeholder="Message">
@@ -29,17 +29,21 @@ projects.forEach(function(p) {
   document.getElementById("Projects").innerHTML += `<a href=${p.Link}><h2 class="projectname">${p.Name}</h2> <p class="projectdesc">${p.desc}</p> </a>`
 })
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const myForm = event.target;
-  const formdata = new FormData(myForm);
-  document.getElementById("form").innerText += " "
-  fetch("/", {
+const form = document.getElementById("form");
+form.addEventListener("submit", formSubmit);
+
+function formSubmit(e) {
+  e.preventDefault()
+  const formData = new FormData(e.target);
+
+  fetch("https://getform.io/f/b24a1fe4-a606-4f8c-8c60-da4d66813543", {
     method: "POST",
-    headers: {"Content-Type": "application/x-www-form-urlencoded"},
-    body: new URLSearchParams(formdata).toString(),
-  }).then(() => alert("Thank you for contacting me"))
-  .catch((err) => alert(err))
+    body: formData,
+    headers: {
+      "Accept": "application/json"
+    }
+  }).then(response => console.log(response))
+  .catch(error => console.log(error));
 }
 
 document.querySelector("form").addEventListener("submit", handleSubmit)
