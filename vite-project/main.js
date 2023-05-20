@@ -33,3 +33,17 @@ projects.forEach(function(p) {
   document.getElementById("Projects").innerHTML += `<a href=${p.Link}><h2 class="projectname">${p.Name}</h2> <p class="projectdesc">${p.desc}</p> </a>`
 })
 
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const myForm = event.target;
+  const formdata = new FormData(myForm);
+
+  fetch("/", {
+    method: "POST",
+    headers: {"Content-Type": "application/x-www-form-urlencoded"},
+    body: new URLSearchParams(formdata).toString(),
+  }).then(() => alert("Thank you for contacting me"))
+  .catch((err) => alert(err))
+}
+
+document.querySelector("form").addEventListener("submit", handleSubmit)
