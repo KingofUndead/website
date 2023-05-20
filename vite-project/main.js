@@ -16,11 +16,13 @@ document.querySelector('#app').innerHTML = `
     <input type="text" name="message" placeholder="Message" class="contactarea message">
     <!-- add hidden Honeypot input to prevent spams -->
     <input type="hidden" name="_gotcha" style="display:none !important">
-    <button type="submit">Send</button>
+    <button type="submit" class="submitButton">Send</button>
 </form>
    </div>
    <div class="aboutme">
    <h1 class="title">About Me</h1>
+   <div id="about">
+   </div>
    </div>
   </div>
 `
@@ -47,3 +49,15 @@ function formSubmit(e) {
 }
 
 document.querySelector("form").addEventListener("submit", formSubmit)
+
+const textcontainer = document.getElementById("about")
+const xhr = new XMLHttpRequest()
+
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    textcontainer.textContent = xhr.responseText
+  }
+}
+
+xhr.open('GET', './aboutme.txt')
+xhr.send()

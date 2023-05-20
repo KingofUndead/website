@@ -117,6 +117,8 @@ form {
   display: flex;
   flex-direction: column;
   align-content: space-between;
+  margin-left: 5%;
+  margin-top: 1%;
 }
 
 .message{
@@ -133,4 +135,15 @@ background: linear-gradient(154.02deg, #FF00D6 0%, #5200FF 96.26%);
 border: 2px dashed #000000;
 border-radius: 20px;
 overflow: hidden;
+}
+
+.submitButton{
+  margin-left: 13%;
+}
+
+#about {
+  width: 80%;
+  height: 75%;
+  margin-left: 10%;
+  margin-top: ;
 }
