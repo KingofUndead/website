@@ -50,8 +50,14 @@ function formSubmit(e) {
 
 document.querySelector("form").addEventListener("submit", formSubmit)
 
-const textcontainer = document.getElementById("about")
-
-fetch('./aboutme.txt').then(response => response.text()).then(data => {
-  textcontainer.textContent = data
+fetch('./aboutme.txt').then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error: ${response.status}`)
+  }
+  return response.text()
+}).then(text => {
+  const textContentElement = document.getElementById("about")
+  textContentElement.textContent = text
+}).catch(error => {
+  console.error(`Error fetching text file:`, error)
 })
