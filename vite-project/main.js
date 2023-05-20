@@ -10,18 +10,14 @@ document.querySelector('#app').innerHTML = `
 
    <div class="contact">
    <h1 class="title">Contact</h1>
-   <form name="contact" method="POST" data-netlify="true">
-   <p>
-   <label>Name: <input type="text" name="name" class="contactarea"/></label>
-   </p>
-   <p>
-   <label>Email: <input type="email" name="email" class="contactarea"/></label>
-   </p>
-   <p>
-   <label>Message: <textarea name="message" class="contactarea"></textarea></label>
-   </p>
-   <button type="submit">Submit</button>
-   </form>
+   <form action="https://getform.io/f/b24a1fe4-a606-4f8c-8c60-da4d66813543" method="POST" data-netlify="true">
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="message" placeholder="Message">
+    <!-- add hidden Honeypot input to prevent spams -->
+    <input type="hidden" name="_gotcha" style="display:none !important">
+    <button type="submit">Send</button>
+</form>
    </div>
    <div class="aboutme">
    <h1 class="title">About Me</h1>
@@ -37,7 +33,7 @@ const handleSubmit = (event) => {
   event.preventDefault();
   const myForm = event.target;
   const formdata = new FormData(myForm);
-
+  document.getElementById("form").innerText += " "
   fetch("/", {
     method: "POST",
     headers: {"Content-Type": "application/x-www-form-urlencoded"},
