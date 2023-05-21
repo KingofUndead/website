@@ -1,17 +1,17 @@
 export default [
     {
-        Name: "Portfolio",
-        desc: "A personal portfolio made my Valerie Hayden",
-        Link: "https://twitch.tv/queen_of_undead"
+        Name: "Guess the ghost",
+        desc: "Guess the ghost is a game where a twitch streamer can play with their chat. Who ever guesses either the ghost room, ghost type, or both correctly they win a prize with the streamer's disgression",
+        Link: "https://github.com/QueenofUndead/guesstheghost"
     },
     {
-        Name: "Test2",
-        desc: "Testdesc2",
+        Name: "Coming soon",
+        desc: "Coming soon",
         Link: "TestLink2"
     },
     {
-        Name:"Test3",
-        desc: "Testdesc3",
+        Name:"Coming soon",
+        desc: "Coming soon",
         Link: "TestLink3"
     }
 ]
