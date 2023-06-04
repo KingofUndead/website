@@ -7,7 +7,7 @@ document.querySelector('#app').innerHTML = `
    <div id="Projects">
    <h1 class="title">Projects</h1>
    </div>
-
+<button id="toggle">Light Mode</button>
    <div class="contact">
    <h1 class="title">Contact</h1>
    <form method="POST">
@@ -31,7 +31,22 @@ document.getElementById("year").innerHTML = new Date().getFullYear()
 projects.forEach(function(p) {
   document.getElementById("Projects").innerHTML += `<a href=${p.Link}><h2 class="projectname">${p.Name}</h2> <p class="projectdesc">${p.desc}</p> </a>`
 })
-
+const toggle = document.getElementById('toggle')
+let isDark
+const bodycolor = document.querySelector('body')
+toggle.addEventListener("click", () => {
+  if (isDark) {
+    isDark = false
+    bodycolor.style.backgroundColor = "#1a1a1a"
+    toggle.innerText = "Light Mode"
+  } 
+  else {
+    isDark = true
+    bodycolor.style.backgroundColor = "#FFFFFF"
+    toggle.innerText = "Dark Mode"
+  }
+  console.log(isDark)
+})
 // const form = document.getElementById("form");
 // form.addEventListener("submit", formSubmit);
 
