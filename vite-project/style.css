@@ -97,7 +97,7 @@ transform: rotate(-90deg);
   text-align: left;
   position: absolute;
 width: 35%;
-height: 34%;
+height: 44%;
 
 background: linear-gradient(154.02deg, #FF00D6 0%, #5200FF 96.26%);
 border: 2px dashed #000000;
@@ -123,7 +123,7 @@ form {
 }
 
 .message{
-  padding-bottom: 10%;
+  padding-bottom: 15%;
 }
 .aboutme {
   text-align: left;
