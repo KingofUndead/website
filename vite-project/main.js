@@ -10,14 +10,7 @@ document.querySelector('#app').innerHTML = `
 <button id="toggle">Light Mode</button>
    <div class="contact">
    <h1 class="title">Contact</h1>
-   <form method="POST">
-    <input type="text" name="name" placeholder="Name" class="contactarea">
-    <input type="email" name="email" placeholder="Email" class="contactarea">
-    <input type="text" name="message" placeholder="Message" class="contactarea message">
-    <!-- add hidden Honeypot input to prevent spams -->
-    <input type="hidden" name="_gotcha" style="display:none !important">
-    <button type="submit" class="submitButton">Send</button>
-</form>
+   <button id="contactbtn">Contact</button>
    </div>
    <div class="aboutme">
    <h1 class="title">About Me</h1>
@@ -66,18 +59,11 @@ fetch('https://portfolioserver-9b3n.onrender.com/send-email', {
 .then(response => response.json())
 .then(data => console.log(data))
 .catch(error => console.log(error));
-
-  // fetch("https://portfolioserver-9b3n.onrender.com", {
-  //   method: "POST",
-  //   body: formData,
-  //   headers: {
-  //     "Accept": "application/json"
-  //   }
-  // }).then(response => console.log(response))
-  // .catch(error => console.log(error));
 }
-
-document.querySelector("form").addEventListener("submit", formSubmit)
+document.getElementById('contactbtn').addEventListener('click', function() {
+  window.location.href = "mailto:valerie.hayden3@gmail.com"
+})
+// document.querySelector("form").addEventListener("submit", formSubmit)
 
 fetch('./aboutme.txt').then(response => {
   if (!response.ok) {
