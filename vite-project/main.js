@@ -9,7 +9,7 @@ document.querySelector('#app').innerHTML = `
    </div>
 <button id="toggle">Light Mode</button>
    <div class="contact">
-   <h1 class="title">Contact</h1>
+   <h1 class="title">Email</h1>
    <button id="contactbtn">Contact</button>
    </div>
    <div class="aboutme">
