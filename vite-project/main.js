@@ -54,7 +54,7 @@ function formSubmit(e) {
   e.preventDefault()
   const formData = new FormData(e.target);
 
-  fetch("https://getform.io/f/b24a1fe4-a606-4f8c-8c60-da4d66813543", {
+  fetch("https://portfolioserver-9b3n.onrender.com", {
     method: "POST",
     body: formData,
     headers: {
