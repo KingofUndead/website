@@ -54,7 +54,7 @@ function formSubmit(e) {
   e.preventDefault()
   const formData = new FormData(e.target);
 
-  fetch("100.20.92.101", {
+  fetch("https://portfolioserver-9b3n.onrender.com", {
     method: "POST",
     body: formData,
     headers: {
