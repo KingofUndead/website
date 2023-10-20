@@ -55,7 +55,14 @@ function formSubmit(e) {
   const formData = new FormData(e.target);
   fetch('https://portfolioserver-9b3n.onrender.com')
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => fetch('https://portfolioserver-9b3n.on.onrender.com', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      Accept: 'application/json'
+    }
+  })).then(response => response.json())
+  .catch(error => console.log(error))
   // fetch("https://portfolioserver-9b3n.onrender.com", {
   //   method: "POST",
   //   body: formData,
