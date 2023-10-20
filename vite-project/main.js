@@ -53,16 +53,17 @@ toggle.addEventListener("click", () => {
 function formSubmit(e) {
   e.preventDefault()
   const formData = new FormData(e.target);
-  fetch('https://portfolioserver-9b3n.onrender.com')
-  .then(response => response.json())
-  .then(data => fetch('https://portfolioserver-9b3n.on.onrender.com', {
+  const data = Object.fromEntries(formData)
+  fetch('https://portfolioserver-9b3n.onrender.com', {
     method: 'POST',
-    body: formData,
+    body: JSON.stringify(data),
     headers: {
-      Accept: 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     }
-  })).then(response => response.json())
-  .catch(error => console.log(error))
+  })
+  .then(response => response.json()).then(data => console.log(data))
+  .catch(e => console.log(e))
   // fetch("https://portfolioserver-9b3n.onrender.com", {
   //   method: "POST",
   //   body: formData,
