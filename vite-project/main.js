@@ -55,7 +55,7 @@ function formSubmit(e) {
   const formData = new FormData(e.target)
   const data = Object.fromEntries(formData)
 
-  fetch('https://portfolioserver-9b3n.onrender.com/send-email', {
+  fetch('https://portfolioserver-9b3n.onrender.com/', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
